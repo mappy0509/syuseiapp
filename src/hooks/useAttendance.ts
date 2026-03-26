@@ -157,9 +157,22 @@ export function useAttendance(teamId: string | null, meetingId: number) {
           next.set(memberId, { ...existing, note })
           return next
         })
+      } else {
+        const { data, error } = await supabase
+          .from('attendance')
+          .insert({ meeting_id: meetingId, member_id: memberId, status: 'pending', guest_count: 0, guest_names: [], paid: false, note })
+          .select()
+          .single()
+        if (!error && data) {
+          setRecords((prev) => {
+            const next = new Map(prev)
+            next.set(memberId, data as AttendanceRecord)
+            return next
+          })
+        }
       }
     },
-    [records]
+    [records, meetingId]
   )
 
   const bulkUpsert = useCallback(

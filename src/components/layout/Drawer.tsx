@@ -47,7 +47,7 @@ export function Drawer({ open, meetingId, isAdmin, onClose, onSelectMeeting, onL
         {/* MEETINGS */}
         <section style={styles.section}>
           <div style={styles.sectionLabel}>MEETINGS</div>
-          {MEETINGS.filter((m) => meetingStatus(m.date).label !== '終了').map((m) => {
+          {MEETINGS.map((m) => {
             const ms = meetingStatus(m.date)
             return (
               <button

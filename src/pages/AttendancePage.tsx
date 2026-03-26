@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import type { AuthState } from '../lib/auth'
 import type { AttendanceStatus, MemberRole } from '../lib/types'
-import { ROLE_ORDER, STATUS_CONFIG } from '../lib/types'
+import { MEETINGS, ROLE_ORDER, STATUS_CONFIG } from '../lib/types'
 import { useMembers } from '../hooks/useMembers'
 import { useAttendance } from '../hooks/useAttendance'
 import { TopBar } from '../components/layout/TopBar'
@@ -21,7 +21,12 @@ interface Props {
 type ModalType = 'roster' | 'match' | 'settings' | 'export' | 'analytics' | 'teambrowse' | 'allteams' | null
 
 export function AttendancePage({ auth, onLogout }: Props) {
-  const [meetingId, setMeetingId] = useState(36)
+  const [meetingId, setMeetingId] = useState(() => {
+    const today = new Date()
+    today.setHours(0, 0, 0, 0)
+    const upcoming = MEETINGS.find((m) => new Date(m.date) >= today)
+    return upcoming?.id ?? MEETINGS[MEETINGS.length - 1].id
+  })
   const [drawerOpen, setDrawerOpen] = useState(false)
   const [modal, setModal] = useState<ModalType>(null)
   const [search, setSearch] = useState('')

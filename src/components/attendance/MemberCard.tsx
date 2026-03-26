@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import type { Member, AttendanceRecord, AttendanceStatus } from '../../lib/types'
 import { STATUS_CONFIG, ROLE_ORDER } from '../../lib/types'
 
@@ -25,6 +25,7 @@ export function MemberCard({ member, record, canEdit, animDelay, onStatusChange,
   const paid = record?.paid ?? false
   const note = record?.note ?? ''
   const [localNote, setLocalNote] = useState(note)
+  useEffect(() => { setLocalNote(note) }, [note])
   const sc = STATUS_CONFIG[status]
   const rc = roleColor(member.role)
 
