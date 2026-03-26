@@ -43,7 +43,7 @@ export function LoginScreen({ onLogin }: Props) {
   return (
     <div style={styles.screen}>
       <div style={styles.box}>
-        <div style={styles.title}>修正クラブ福岡中央</div>
+        <img src="/logo.png" alt="福岡中央ロゴ" style={styles.logo} />
         <div style={styles.sub}>出席管理ダッシュボード</div>
 
         <div style={styles.field}>
@@ -104,11 +104,13 @@ const styles: Record<string, React.CSSProperties> = {
     boxShadow: '0 20px 60px rgba(0,0,0,.08)',
     textAlign: 'center',
   },
-  title: {
-    fontSize: '18px',
-    fontWeight: 700,
-    color: '#1F2937',
-    marginBottom: '4px',
+  logo: {
+    width: '220px',
+    maxWidth: '100%',
+    marginBottom: '8px',
+    display: 'block',
+    marginLeft: 'auto',
+    marginRight: 'auto',
   },
   sub: {
     fontSize: '12px',

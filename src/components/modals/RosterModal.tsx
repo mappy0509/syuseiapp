@@ -109,7 +109,7 @@ export function RosterModal({ members, onClose, onAdd, onBulkAdd, onEdit, onDele
       {/* EDIT */}
       {tab === 'list' && editId && (
         <>
-          <h4 style={{ fontSize: '14px', color: 'var(--gold-l)', marginBottom: '16px' }}>プロフィール編集</h4>
+          <h4 style={{ fontSize: '14px', color: 'var(--gold)', marginBottom: '16px' }}>プロフィール編集</h4>
           <Field label="氏名"><input style={styles.input} value={editName} onChange={(e) => setEditName(e.target.value)} /></Field>
           <Field label="会社名"><input style={styles.input} value={editCompany} onChange={(e) => setEditCompany(e.target.value)} /></Field>
           <Field label="役職">
@@ -191,5 +191,5 @@ const styles: Record<string, React.CSSProperties> = {
   input: { width: '100%', padding: '10px 14px', borderRadius: 'var(--rs)', background: 'var(--bg2)', border: '1px solid var(--border2)', color: 'var(--txt)', fontSize: '14px', outline: 'none' },
   actions: { display: 'flex', gap: '10px', marginTop: '24px' },
   cancelBtn: { flex: 1, padding: '11px', borderRadius: 'var(--rs)', fontSize: '14px', fontWeight: 600, border: '1px solid var(--border)', color: 'var(--txt2)', cursor: 'pointer', background: 'transparent' },
-  confirmBtn: { flex: 1, padding: '11px', borderRadius: 'var(--rs)', fontSize: '14px', fontWeight: 600, background: 'linear-gradient(135deg,var(--gold),#B8960C)', color: '#080C16', cursor: 'pointer', border: 'none' },
+  confirmBtn: { flex: 1, padding: '11px', borderRadius: 'var(--rs)', fontSize: '14px', fontWeight: 600, background: 'linear-gradient(135deg,var(--gold),#7F1D1D)', color: '#FFFFFF', cursor: 'pointer', border: 'none' },
 }

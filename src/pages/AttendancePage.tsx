@@ -273,7 +273,7 @@ const styles: Record<string, React.CSSProperties> = {
   },
   actionBtn: { padding: '8px 14px', borderRadius: 'var(--rs)', fontSize: '12px', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '5px', cursor: 'pointer', border: 'none' },
   actionBtnOutline: { border: '1px solid var(--border)', color: 'var(--txt2)', background: 'transparent' },
-  actionBtnGold: { background: 'linear-gradient(135deg,var(--gold),#B8960C)', color: '#080C16', boxShadow: '0 2px 10px rgba(212,175,55,.25)' },
+  actionBtnGold: { background: 'linear-gradient(135deg,var(--gold),#7F1D1D)', color: '#FFFFFF', boxShadow: '0 2px 10px rgba(185,28,28,.25)' },
   empty: { textAlign: 'center', padding: '48px 16px', color: 'var(--txt3)', fontSize: '14px' },
   footer: { padding: '12px 16px', textAlign: 'center', fontSize: '11px', color: 'var(--txt3)', borderTop: '1px solid var(--border)' },
 }

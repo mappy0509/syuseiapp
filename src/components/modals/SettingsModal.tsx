@@ -78,5 +78,5 @@ const styles: Record<string, React.CSSProperties> = {
   error: { fontSize: '13px', color: 'var(--red)', marginBottom: '12px', padding: '8px 12px', background: 'rgba(239,68,68,.08)', borderRadius: 'var(--rs)', border: '1px solid rgba(239,68,68,.2)' },
   actions: { display: 'flex', gap: '10px', marginTop: '24px' },
   cancelBtn: { flex: 1, padding: '11px', borderRadius: 'var(--rs)', fontSize: '14px', fontWeight: 600, border: '1px solid var(--border)', color: 'var(--txt2)', cursor: 'pointer', background: 'transparent' },
-  confirmBtn: { flex: 1, padding: '11px', borderRadius: 'var(--rs)', fontSize: '14px', fontWeight: 600, background: 'linear-gradient(135deg,var(--gold),#B8960C)', color: '#080C16', cursor: 'pointer', border: 'none' },
+  confirmBtn: { flex: 1, padding: '11px', borderRadius: 'var(--rs)', fontSize: '14px', fontWeight: 600, background: 'linear-gradient(135deg,var(--gold),#7F1D1D)', color: '#FFFFFF', cursor: 'pointer', border: 'none' },
 }

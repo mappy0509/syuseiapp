@@ -192,7 +192,7 @@ const styles: Record<string, React.CSSProperties> = {
     minWidth: '60px',
     padding: '8px 10px',
     borderRadius: '6px',
-    background: 'rgba(255,255,255,.03)',
+    background: '#F9FAFB',
     border: '1px solid var(--border)',
     color: 'var(--txt)',
     fontSize: '13px',
