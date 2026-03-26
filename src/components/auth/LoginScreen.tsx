@@ -41,8 +41,8 @@ export function LoginScreen({ onLogin }: Props) {
   }
 
   return (
-    <div style={styles.screen}>
-      <div style={styles.box}>
+    <div className="login-screen">
+      <div className="login-box">
         <img src="/logo.png" alt="福岡中央ロゴ" style={styles.logo} />
         <div style={styles.sub}>出席管理ダッシュボード</div>
 
@@ -86,24 +86,6 @@ export function LoginScreen({ onLogin }: Props) {
 }
 
 const styles: Record<string, React.CSSProperties> = {
-  screen: {
-    position: 'fixed',
-    inset: 0,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    background: '#FFFFFF',
-    animation: 'fadeIn .5s both',
-  },
-  box: {
-    width: 'min(400px, 90vw)',
-    padding: '44px 32px 36px',
-    background: '#FFFFFF',
-    border: '1px solid #E5E7EB',
-    borderRadius: '20px',
-    boxShadow: '0 20px 60px rgba(0,0,0,.08)',
-    textAlign: 'center',
-  },
   logo: {
     width: '220px',
     maxWidth: '100%',

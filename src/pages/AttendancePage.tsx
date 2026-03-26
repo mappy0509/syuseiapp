@@ -94,7 +94,7 @@ export function AttendancePage({ auth, onLogout }: Props) {
           <div style={styles.aiBannerDesc}>
             公式サイトの出席者一覧をコピー＆ペーストすると、{activeMembers.length}名の出席/欠席/未回答を自動判定します。
           </div>
-          <div style={styles.aiBannerBtns}>
+          <div className="ai-banner-btns">
             <button style={{ ...styles.aiFetchBtn, ...styles.aiFetchBtnPrimary }}
               onClick={() => window.open('https://shuseiclubfukuokachuou.com/', '_blank')}>
               🌐 公式サイトを開く
@@ -109,17 +109,16 @@ export function AttendancePage({ auth, onLogout }: Props) {
         <StatsRow stats={currentStats} />
 
         {/* Toolbar */}
-        <div style={styles.toolbar}>
-          <div style={styles.searchBox}>
+        <div className="page-toolbar">
+          <div className="toolbar-search">
             <span style={{ color: 'var(--txt3)', fontSize: '14px' }}>🔍</span>
             <input
-              style={styles.searchInput}
               placeholder="氏名・会社名で検索..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
           </div>
-          <div style={styles.toolbarActions}>
+          <div className="toolbar-actions">
             <button style={styles.bulkBtn} onClick={handleBulkPresent}>一括出席</button>
             <button style={{ ...styles.actionBtn, ...styles.actionBtnOutline }} onClick={() => setModal('roster')}>👥 名簿</button>
             <button style={{ ...styles.actionBtn, ...styles.actionBtnGold }} onClick={() => setModal('roster')}>＋ 追加</button>
@@ -229,10 +228,7 @@ const styles: Record<string, React.CSSProperties> = {
   },
   aiBannerTitle: { fontSize: '15px', fontWeight: 700, color: 'var(--violet)', marginBottom: '6px' },
   aiBannerDesc: { fontSize: '12px', color: 'var(--txt2)', lineHeight: 1.7, marginBottom: '14px' },
-  aiBannerBtns: { display: 'flex', gap: '8px', flexWrap: 'wrap' },
   aiFetchBtn: {
-    flex: 1,
-    minWidth: '140px',
     padding: '13px 16px',
     borderRadius: 'var(--rs)',
     fontSize: '14px',
@@ -247,20 +243,6 @@ const styles: Record<string, React.CSSProperties> = {
   },
   aiFetchBtnPrimary: { background: 'linear-gradient(135deg,var(--violet),#6D28D9)', color: '#fff', boxShadow: '0 3px 16px rgba(139,92,246,.3)' },
   aiFetchBtnSecondary: { background: 'rgba(59,130,246,.1)', border: '1px solid rgba(59,130,246,.25)', color: 'var(--blue)' },
-  toolbar: { display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px', flexWrap: 'wrap' },
-  searchBox: {
-    display: 'flex',
-    alignItems: 'center',
-    gap: '8px',
-    flex: 1,
-    minWidth: '160px',
-    background: 'var(--card)',
-    border: '1px solid var(--border)',
-    borderRadius: 'var(--rs)',
-    padding: '8px 12px',
-  },
-  searchInput: { flex: 1, background: 'none', border: 'none', outline: 'none', color: 'var(--txt)', fontSize: '13px', minWidth: 0 },
-  toolbarActions: { display: 'flex', gap: '6px', flexWrap: 'wrap' },
   bulkBtn: {
     padding: '7px 12px',
     borderRadius: 'var(--rs)',

@@ -14,7 +14,7 @@ export function TopBar({ teamName, meetingId, onMenuOpen }: Props) {
       <button style={styles.menuBtn} onClick={onMenuOpen}>☰</button>
       <div style={styles.info}>
         <div style={styles.team}>{teamName} — 出席管理</div>
-        <div style={styles.meeting}>
+        <div className="topbar-meeting">
           {meeting ? `${meeting.label} ${meeting.date}（${meeting.day}）` : ''}
         </div>
       </div>
@@ -58,5 +58,4 @@ const styles: Record<string, React.CSSProperties> = {
     overflow: 'hidden',
     textOverflow: 'ellipsis',
   },
-  meeting: { fontSize: '11px', color: 'var(--txt2)', marginTop: '1px' },
 }

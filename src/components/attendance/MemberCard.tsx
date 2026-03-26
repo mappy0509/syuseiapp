@@ -71,7 +71,7 @@ export function MemberCard({ member, record, canEdit, animDelay, onStatusChange,
       </div>
 
       {/* Guest + Paid + Note */}
-      <div style={styles.bottomRow}>
+      <div className="member-bottom-row">
         {/* Guest counter */}
         <div style={styles.guestBox}>
           <span style={styles.guestLabel}>▼ゲスト</span>
@@ -97,7 +97,7 @@ export function MemberCard({ member, record, canEdit, animDelay, onStatusChange,
 
         {/* Note */}
         <input
-          style={styles.noteInput}
+          className="member-note"
           placeholder="メモ..."
           value={localNote}
           onChange={(e) => setLocalNote(e.target.value)}
@@ -143,7 +143,6 @@ const styles: Record<string, React.CSSProperties> = {
   },
   statusIcon: { fontSize: '16px', lineHeight: 1 },
   statusLabel: { fontSize: '10px' },
-  bottomRow: { display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' },
   guestBox: {
     display: 'flex',
     alignItems: 'center',
@@ -186,17 +185,6 @@ const styles: Record<string, React.CSSProperties> = {
     cursor: 'pointer',
     borderStyle: 'solid',
     transition: 'all .15s',
-  },
-  noteInput: {
-    flex: 1,
-    minWidth: '60px',
-    padding: '8px 10px',
-    borderRadius: '6px',
-    background: '#F9FAFB',
-    border: '1px solid var(--border)',
-    color: 'var(--txt)',
-    fontSize: '13px',
-    outline: 'none',
   },
 }
 

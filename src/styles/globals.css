@@ -82,3 +82,133 @@ button {
 ::-webkit-scrollbar { width: 4px; height: 4px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: rgba(0,0,0,.15); border-radius: 2px; }
+
+/* ===== Responsive layout classes ===== */
+
+/* Stats grid: 6 cols on desktop, 3 cols on mobile */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+@media (max-width: 600px) {
+  .stats-row { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Page toolbar */
+.page-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.toolbar-search {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--rs);
+  padding: 8px 12px;
+  overflow: hidden;
+}
+.toolbar-search input {
+  flex: 1;
+  min-width: 0;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--txt);
+  font-size: 13px;
+  font-family: inherit;
+}
+.toolbar-actions {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+/* AI Banner buttons */
+.ai-banner-btns {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.ai-banner-btns > button {
+  flex: 1;
+  min-width: 120px;
+}
+@media (max-width: 420px) {
+  .ai-banner-btns > button {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+}
+
+/* MemberCard bottom row */
+.member-bottom-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.member-note {
+  flex: 1;
+  min-width: 80px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  background: #F9FAFB;
+  border: 1px solid var(--border);
+  color: var(--txt);
+  font-size: 13px;
+  outline: none;
+  font-family: inherit;
+}
+@media (max-width: 460px) {
+  .member-note {
+    width: 100%;
+    flex: none;
+    min-width: 0;
+  }
+}
+
+/* TopBar meeting text */
+.topbar-meeting {
+  font-size: 11px;
+  color: var(--txt2);
+  margin-top: 1px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Login screen */
+.login-screen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFFFFF;
+  animation: fadeIn .5s both;
+  padding: 16px;
+}
+.login-box {
+  width: 100%;
+  max-width: 400px;
+  padding: 44px 32px 36px;
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.08);
+  text-align: center;
+}
+@media (max-width: 440px) {
+  .login-box {
+    padding: 32px 20px 28px;
+    border-radius: 16px;
+  }
+}

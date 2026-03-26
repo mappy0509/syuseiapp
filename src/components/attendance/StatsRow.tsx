@@ -22,7 +22,7 @@ export function StatsRow({ stats }: Props) {
   ]
 
   return (
-    <div style={styles.row}>
+    <div className="stats-row">
       {items.map((item, i) => (
         <div key={i} style={{ ...styles.card, animationDelay: `${i * 50}ms` }}>
           <div style={styles.label}>{item.label}</div>
@@ -34,12 +34,6 @@ export function StatsRow({ stats }: Props) {
 }
 
 const styles: Record<string, React.CSSProperties> = {
-  row: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(6, 1fr)',
-    gap: '8px',
-    marginBottom: '16px',
-  },
   card: {
     background: 'var(--card)',
     border: '1px solid var(--border)',
